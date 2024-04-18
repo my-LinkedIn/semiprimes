@@ -1,6 +1,6 @@
 # SEMIPRIMES
 
-## Source code
+## D Source code
 
 ```d
 import std.stdio: writeln, writefln;
