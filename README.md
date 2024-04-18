@@ -36,6 +36,7 @@ void main() {
     
     writeln;
     semiprimes.writeln;
+    
     writefln("\nSum of the 1st %s semiprime = %d", N, semiprimes.sum);
     
 }
