@@ -9,7 +9,7 @@ import std.stdio: writeln, writefln;
 import std.range;
 import std.algorithm;
 
-/// Used the OEIS convention
+/// OEIS coding as a naming convention
 /// Refer to https://oeis.org/A001358
 /// Semiprimes (or biprimes): products of two primes.
 
