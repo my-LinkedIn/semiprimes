@@ -1,5 +1,47 @@
 # SEMIPRIMES
 
+## Source code
+
+```d
+import std.stdio: writeln, writefln;
+import std.range;
+import std.algorithm;
+
+/// Used the OEIS convention
+/// Refer to https://oeis.org/A001358
+/// Semiprimes (or biprimes): products of two primes.
+
+bool isA001358(ulong n) pure nothrow @safe {
+    if (n < 4)
+        return false;
+
+    ulong factorCount = 0;
+    
+    for (ulong i = 2; i * i <= n && factorCount < 3; ++i) {
+        while (n % i == 0) {
+            ++factorCount;
+            n /= i;
+        }
+    }
+    
+    if (n > 1)
+        ++factorCount;
+    
+    return factorCount == 2;
+}
+
+void main() {    
+    const N = 100uL;
+    auto immutable semiprimes = iota(N+1).filter!isA001358.array;
+    
+    writeln;
+    semiprimes.writeln;
+    writefln("\nSum of the 1st %s semiprime = %d", N, semiprimes.sum);
+    
+}
+
+```
+
 ## Output
 
 ```text
