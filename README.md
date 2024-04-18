@@ -1,5 +1,5 @@
-# semiprimes
+# SEMIPRIMES
 
 ## References
 
-[A001358](https://oeis.org/A001358)
+[A001358 Sequence](https://oeis.org/A001358)
