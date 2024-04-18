@@ -1,5 +1,6 @@
 # SEMIPRIMES
 
+Testing the Waters with Semiprime Numbers... thanks to this [LinkedIn Post](https://www.linkedin.com/feed/update/urn:li:activity:7186515424790888448?utm_source=share&utm_medium=member_desktop)
 ## D Source code
 
 ```d
