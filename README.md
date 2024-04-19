@@ -1,6 +1,6 @@
 # SEMIPRIMES
 
-Testing the Waters with [Semiprime Numbers](https://en.wikipedia.org/wiki/Semiprime)... thanks to this [LinkedIn Post](https://www.linkedin.com/feed/update/urn:li:activity:7186515424790888448?utm_source=share&utm_medium=member_desktop).
+Testing the Waters with [Semiprime Numbers](https://en.wikipedia.org/wiki/Semiprime)... thanks to this [LinkedIn Post](https://www.linkedin.com/feed/update/urn:li:activity:7186515424790888448?utm_source=share&utm_medium=member_desktop) bringing them to my awereness.
 
 ## Iota Range Filtering Approach
 
