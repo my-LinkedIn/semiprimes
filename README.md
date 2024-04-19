@@ -4,7 +4,7 @@ Testing the Waters with [Semiprime Numbers](https://en.wikipedia.org/wiki/Semipr
 
 ## Iota Range Filtering Approach
 
-### D Source code
+### Source code
 
 ```d
 import std.stdio: writeln, writefln;
@@ -53,6 +53,66 @@ void main() {
 [4, 6, 9, 10, 14, 15, 21, 22, 25, 26, 33, 34, 35, 38, 39, 46, 49, 51, 55, 57, 58, 62, 65, 69, 74, 77, 82, 85, 86, 87, 91, 93, 94, 95]
 
 Sum of the 1st 100 semiprime = 1707
+```
+## Direct Semiprime generation Approach
+
+### Source code
+
+```d
+import std.stdio: writefln;
+import std.datetime.stopwatch: StopWatch;
+import std.algorithm: all, filter, until;
+import std.range: iota;
+import std.array: Appender, array;
+import std.algorithm: sort;
+import std.algorithm.iteration;
+
+auto generate_sp(ulong limit) {
+    auto isPrime = (ulong number) => number >= 2 && iota(2, number).until!(x => x * x > number).all!(x => (number % x) != 0);
+    auto primes = (iota(limit).filter!isPrime).array;
+    
+    Appender!(ulong[]) semiprimes;
+
+    foreach (p1; primes) {
+        if (p1 * p1 > limit) {
+            // Limit exceeded
+            break;  
+        }
+        
+        foreach (p2; primes) {
+            auto semiprime = p1 * p2;
+            
+            if (semiprime <= limit) {
+                semiprimes ~= semiprime;
+            } else {
+                // Limit exceeded
+                break;  
+            }
+        }
+    }
+
+    return semiprimes.data.sort.uniq;
+}
+
+void main() {
+    StopWatch timer;
+    timer.start();
+    
+    const LIMIT = 100uL;
+    
+    auto semiprimes = generate_sp(LIMIT);
+    
+    auto sumOfSp = semiprimes.sum;
+    
+    writefln("\nSum of the 1st. %,3?d semiprimes: %,3?d", '_', LIMIT, '_', sumOfSp);
+    
+    timer.stop();
+    writefln("Elapsed time: %s milliseconds.\n", timer.peek.total!"msecs"());
+}
+```
+### Output
+
+```text
 ```
 
 ## References
