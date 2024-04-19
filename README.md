@@ -2,7 +2,9 @@
 
 Testing the Waters with [Semiprime Numbers](https://en.wikipedia.org/wiki/Semiprime)... thanks to this [LinkedIn Post](https://www.linkedin.com/feed/update/urn:li:activity:7186515424790888448?utm_source=share&utm_medium=member_desktop).
 
-## D Source code
+## Iota Range Filtering Approach
+
+### D Source code
 
 ```d
 import std.stdio: writeln, writefln;
@@ -45,7 +47,7 @@ void main() {
 
 ```
 
-## Output
+### Output
 
 ```text
 [4, 6, 9, 10, 14, 15, 21, 22, 25, 26, 33, 34, 35, 38, 39, 46, 49, 51, 55, 57, 58, 62, 65, 69, 74, 77, 82, 85, 86, 87, 91, 93, 94, 95]
