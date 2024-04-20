@@ -121,7 +121,19 @@ Elapsed time: 7 milliseconds.
 
 ## Extra Bonus
 
-When tackling number theory problems and developing algorithms, I occasionally employ [Pari GP](https://pari.math.u-bordeaux.fr), a lightweight computer algebra system. 
+When tackling number theory problems and developing algorithms, I occasionally employ [Pari GP](https://pari.math.u-bordeaux.fr), a lightweight computer algebra system. I came up with the following:
+
+```pari
+generate_sp(limit) = {
+    my(semiprimes);
+    semiprimes = [];
+    forprime(p1=2, limit, forprime(p2=2, limit, semiprime = p1 * p2; if (semiprime <= limit, semiprimes = concat(semiprimes, semiprime))));
+    semiprimes = Set(semiprimes);
+    semiprimes = Vec(semiprimes); 
+    semiprimes = vecsort(semiprimes);
+    semiprimes
+}
+```
 
 ## References
 
