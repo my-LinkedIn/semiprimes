@@ -119,6 +119,10 @@ Sum of the 1st. 100 semiprimes: 1_707
 Elapsed time: 7 milliseconds.
 ```
 
+## Extra Bonus
+
+When tackling number theory problems and developing algorithms, I occasionally employ [Pari GP](https://pari.math.u-bordeaux.fr), a lightweight computer algebra system. 
+
 ## References
 
 [A001358 Sequence](https://oeis.org/A001358)
